@@ -8,8 +8,8 @@ export default function LoginSuccess() {
 
   return (
     <>
-      <h1 className="text-xl sm:text-2xl font-bold mb-16 sm:mb-20">WELCOME</h1>
-      <h2 className="text-xl sm:text-2xl mt-8 sm:mt-10 text-center font-semibold">
+      <h1 className="text-2xl sm:text-4xl font-bold mb-16 sm:mb-20">WELCOME</h1>
+      <h2 className="text-2xl sm:text-4xl font-bold  mt-8 sm:mt-10 text-center">
         Name: <span className="font-bold">{session?.user?.name}</span>
       </h2>
       <h2 className="text-xl sm:text-2xl mt-8 sm:mt-10 text-center font-semibold">

@@ -7,11 +7,30 @@ body {
 }
 
 input {
-  @apply w-full border border-gray-200 py-2 px-4 mt-2 bg-zinc-100/40;
+  @apply w-full border border-black py-2 px-4 mt-2 bg-zinc-100/40;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input:hover {
+  @apply border border-yellow-500 
 }
 
 button {
   @apply flex flex-row justify-center font-bold mt-6 sm:mt-8 
   border-[1.5px] border-black
-  bg-primaryYellow py-2;
+  bg-primaryYellow py-2
+  shadow-md transition duration-300 ease-in-out transform;
+}
+
+button:hover {
+  @apply shadow-lg translate-x-1 translate-y-1;
+}
+
+
+h1 {
+  @apply text-white;
+  -webkit-text-stroke: 0.5px black;
 }

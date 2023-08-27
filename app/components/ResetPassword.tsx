@@ -65,8 +65,10 @@ export default function ResetPassword() {
   return (
     <>
       {/* Title */}
-      <h1 className="text-xl sm:text-2xl font-bold">RESET</h1>
-      <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6">YOUR PASSWORD</h2>
+      <h1 className="text-2xl sm:text-4xl font-bold">RESET</h1>
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">
+        YOUR PASSWORD
+      </h2>
 
       {/* Form */}
       <form

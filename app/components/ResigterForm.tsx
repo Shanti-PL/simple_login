@@ -13,7 +13,10 @@ export default function RegisterForm() {
 
   const router = useRouter();
 
-  const handleSubmit = async (e: { preventDefault: () => void; target: any; }) => {
+  const handleSubmit = async (e: {
+    preventDefault: () => void;
+    target: any;
+  }) => {
     e.preventDefault();
 
     if (!name || !email || !password) {
@@ -64,8 +67,10 @@ export default function RegisterForm() {
   return (
     <>
       {/* Title */}
-      <h1 className="text-xl sm:text-2xl font-bold">REGISTER</h1>
-      <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6">YOUR ACCOUNT</h2>
+      <h1 className="text-2xl sm:text-4xl font-bold">REGISTER</h1>
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">
+        YOUR ACCOUNT
+      </h2>
 
       {/* Form */}
       <form

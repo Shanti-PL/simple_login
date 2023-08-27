@@ -37,8 +37,8 @@ export default function LoginForm() {
   return (
     <>
       {/* Title */}
-      <h1 className="text-xl sm:text-2xl font-bold">WELCOME</h1>
-      <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6">BACK</h2>
+      <h1 className="text-2xl sm:text-4xl font-bold">WELCOME</h1>
+      <h2 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-6">BACK</h2>
 
       {/* Form */}
       <form
@@ -48,14 +48,17 @@ export default function LoginForm() {
         <input
           onChange={(e) => setEmail(e.target.value)}
           type="text"
-          placeholder="Email"
+          placeholder="Enter your Email"
         />
         <input
           onChange={(e) => setPassword(e.target.value)}
           type="password"
-          placeholder="Password"
+          placeholder="Enter your Password"
         />
-        <Link href={"/forgetPassword"} className="hover:underline hover:cursor-pointer">
+        <Link
+          href={"/forgetPassword"}
+          className="hover:underline hover:cursor-pointer"
+        >
           Forgot your password?
         </Link>
         <button>
@@ -80,7 +83,7 @@ export default function LoginForm() {
           Don&apos;t have an account?&nbsp;
           <Link
             href={"/register"}
-            className="hover:underline hover:cursor-pointer font-semibold"
+            className="hover:underline hover:cursor-pointer font-bold"
           >
             Sign up
           </Link>
