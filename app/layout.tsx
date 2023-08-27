@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
+import { AuthProvider } from './Provider';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +34,7 @@ export default function RootLayout({
             {/* The block to contain form */}
             <div className="grid place-items-center h-screen relative">
               <div className="mx-auto mt-[-40%] sm:mt-[-19%] md:mt-[-20%] lg:m-auto px-10 md:px-12 py-12 md:py-16 w-[80%] md:w-[60%] lg:w-[50%] h-[70%] z-10 bg-white border border-black">
-                {children}
+                <AuthProvider>{children}</AuthProvider>
               </div>
               <div className="absolute left-[13%] top-[7%] sm:left-[14%] sm:top-[9%] md:left-[21.5%] md:top-[8.5%] lg:left-[27%] lg:top-[17%] w-[80%] md:w-[60%] lg:w-[50%] h-[70%] bg-primaryYellow border border-black"></div>
             </div>
