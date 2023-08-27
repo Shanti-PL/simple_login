@@ -50,13 +50,12 @@ export default function ResetPassword() {
         }),
       });
 
-      if (res.ok) {
+      if (res) {
         const form = e.target;
         form.reset();
         router.push("/");
       } else {
-        console.log("Password reset failed. Response status:", res.status);
-        console.log("Password reset failed. Response body:", await res.json());
+        console.log("Password reset failed.");
       }
     } catch (error) {
       console.log("Error during reset password:", error);
