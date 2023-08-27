@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function ResetPassword() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -19,7 +18,7 @@ export default function ResetPassword() {
   }) => {
     e.preventDefault();
 
-    if (!name || !email || !password) {
+    if (!email || !password) {
       setError("All fields are necessary.");
       return;
     }
@@ -56,10 +55,11 @@ export default function ResetPassword() {
         form.reset();
         router.push("/");
       } else {
-        console.log("Password reset failed.");
+        console.log("Password reset failed. Response status:", res.status);
+        console.log("Password reset failed. Response body:", await res.text());
       }
     } catch (error) {
-      console.log("Error during reset password: ", error);
+      console.log("Error during reset password:", error);
     }
   };
 
