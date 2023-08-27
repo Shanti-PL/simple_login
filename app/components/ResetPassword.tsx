@@ -35,8 +35,8 @@ export default function ResetPassword() {
 
       const { user } = await resUserExists.json();
 
-      if (user) {
-        setError("User already exists.");
+      if (!user) {
+        setError("Don't have this user.");
         return;
       }
 
