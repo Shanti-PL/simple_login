@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-black;
+}
+
+input {
+  @apply w-full border border-gray-200 py-2 px-4 mt-2 bg-zinc-100/40;
+}
+
+button {
+  @apply flex flex-row justify-center font-bold mt-6 sm:mt-8 
+  border-[1.5px] border-black
+  bg-primaryYellow py-2;
+}
