@@ -29,13 +29,10 @@ export async function POST(req) {
 
     console.log("Password reset successful.");
 
-    return new NextResponse(
-      { message: "Password reset successful." },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Password reseted."}, {status: 201});
   } catch (error) {
     console.error("An error occurred while processing the request:", error);
-    return new NextResponse(
+    return NextResponse.json(
       { message: "An error occurred while processing your request." },
       { status: 500 }
     );
