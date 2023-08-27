@@ -5,10 +5,10 @@ import bcrypt from "bcryptjs";
 
 export async function POST(req) {
   try {
-    const { email, newPassword } = await req.json();
+    const { email, password } = await req.json();
 
     console.log("Received password reset request for email:", email);
-
+    const hashedPassword = await bcrypt.hash(password, 10);
     await connectMongoDB();
 
     const user = await User.findOne({ email });
@@ -24,7 +24,6 @@ export async function POST(req) {
     console.log("Updating password for user with email:", email);
 
     // update the password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
     await User.updateOne({ email }, { password: hashedPassword });
 
     console.log("Password reset successful.");
