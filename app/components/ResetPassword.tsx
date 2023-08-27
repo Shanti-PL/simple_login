@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function RegisterForm() {
+export default function ResetPassword() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +13,10 @@ export default function RegisterForm() {
 
   const router = useRouter();
 
-  const handleSubmit = async (e: { preventDefault: () => void; target: any; }) => {
+  const handleSubmit = async (e: {
+    preventDefault: () => void;
+    target: any;
+  }) => {
     e.preventDefault();
 
     if (!name || !email || !password) {
@@ -37,13 +40,12 @@ export default function RegisterForm() {
         return;
       }
 
-      const res = await fetch("api/register", {
+      const res = await fetch("api/ResetPassword", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
           email,
           password,
         }),
@@ -54,29 +56,24 @@ export default function RegisterForm() {
         form.reset();
         router.push("/");
       } else {
-        console.log("User registration failed.");
+        console.log("Password reset failed.");
       }
     } catch (error) {
-      console.log("Error during registration: ", error);
+      console.log("Error during reset password: ", error);
     }
   };
 
   return (
     <>
       {/* Title */}
-      <h1 className="text-xl sm:text-2xl font-bold">REGISTER</h1>
-      <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6">YOUR ACCOUNT</h2>
+      <h1 className="text-xl sm:text-2xl font-bold">RESET</h1>
+      <h2 className="text-xl sm:text-2xl mb-4 sm:mb-6">YOUR PASSWORD</h2>
 
       {/* Form */}
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-3 text-sm sm:text-base"
       >
-        <input
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          placeholder="First Name"
-        />
         <input
           onChange={(e) => setEmail(e.target.value)}
           type="text"
@@ -88,7 +85,7 @@ export default function RegisterForm() {
           placeholder="Password"
         />
         <button>
-          Register&nbsp;
+          Reset&nbsp;
           <Image
             src="/button-arrow.svg"
             alt="Arrow Icon"
