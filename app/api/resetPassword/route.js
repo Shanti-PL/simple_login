@@ -24,9 +24,8 @@ export async function POST(req) {
     console.log("Updating password for user with email:", email);
 
     // update the password
-    await User.updateOne({ email }, { password: hashedPassword });
+    await User.updateOne({ email }, { $set: { password: hashedPassword } });
 
-    console.log("Password reset successful.");
 
     return NextResponse.json({ message: "Password reseted."}, {status: 201});
   } catch (error) {
