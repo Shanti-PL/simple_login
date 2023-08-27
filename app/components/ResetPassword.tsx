@@ -56,7 +56,7 @@ export default function ResetPassword() {
         router.push("/");
       } else {
         console.log("Password reset failed. Response status:", res.status);
-        console.log("Password reset failed. Response body:", await res.text());
+        console.log("Password reset failed. Response body:", await res.json());
       }
     } catch (error) {
       console.log("Error during reset password:", error);
