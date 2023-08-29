@@ -14,6 +14,10 @@ input:focus::placeholder {
   color: transparent;
 }
 
+input:focus {
+  @apply outline-none border border-yellow-500;
+}
+
 input:hover {
   @apply border border-yellow-500 
 }

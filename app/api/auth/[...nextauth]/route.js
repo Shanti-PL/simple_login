@@ -26,7 +26,7 @@ const authOptions = {
           if (!passwordsMatch) {
             return null;
           }
-
+          console.log("Auth URL is: ", process.env.NEXTAUTH_URL);
           return user;
         } catch (error) {
           console.log("Error: ", error);
