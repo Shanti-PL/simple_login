@@ -40,6 +40,11 @@ export default function RegisterForm() {
         return;
       }
 
+      if (!email.includes("@")) {
+        setError("Please enter a valid email address");
+        return;
+      }
+
       const res = await fetch("api/register", {
         method: "POST",
         headers: {
