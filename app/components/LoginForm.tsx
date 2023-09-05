@@ -20,6 +20,8 @@ export default function LoginForm() {
       const res = await signIn("credentials", {
         email,
         password,
+        // The default behavior is to redirect the user to the sign-in page,
+        // from where - after a successful login - they will be sent back to the page they started on
         redirect: false,
       });
 
@@ -61,16 +63,19 @@ export default function LoginForm() {
         >
           Forgot your password?
         </Link>
-        <button>
-          Log&nbsp;&nbsp;In&nbsp;
-          <Image
-            src="/button-arrow.svg"
-            alt="Arrow Icon"
-            className="h-4 w-4 ml-1 my-auto"
-            width={10}
-            height={10}
-          />
-        </button>
+        <div className="relative w-full mt-6 sm:mt-8">
+          <button>
+            Log&nbsp;&nbsp;In&nbsp;
+            <Image
+              src="/button-arrow.svg"
+              alt="Arrow Icon"
+              className="h-4 w-4 ml-1 my-auto"
+              width={10}
+              height={10}
+            />
+          </button>
+          <div className="absolute inset-0 bg-black opacity-100 z-0" />
+        </div>
 
         {/* Error message */}
         {error && (

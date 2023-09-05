@@ -85,16 +85,19 @@ export default function ResetPassword() {
           type="password"
           placeholder="Password"
         />
-        <button>
-          Reset&nbsp;
-          <Image
-            src="/button-arrow.svg"
-            alt="Arrow Icon"
-            className="h-4 w-4 ml-1 my-auto"
-            width={10}
-            height={10}
-          />
-        </button>
+        <div className="relative w-full mt-6 sm:mt-8">
+          <button>
+            Reset&nbsp;
+            <Image
+              src="/button-arrow.svg"
+              alt="Arrow Icon"
+              className="h-4 w-4 ml-1 my-auto"
+              width={10}
+              height={10}
+            />
+          </button>
+          <div className="absolute inset-0 bg-black opacity-100 z-0" />
+        </div>
 
         {/* Error message */}
         {error && (

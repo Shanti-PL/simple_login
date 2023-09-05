@@ -23,15 +23,17 @@ input:hover {
 }
 
 button {
-  @apply flex flex-row justify-center font-bold mt-6 sm:mt-8 
+  @apply flex flex-row justify-center font-bold w-full 
   border-[1.5px] border-black
   bg-primaryYellow py-2
-  shadow-md transition duration-300 ease-in-out transform;
+  transition duration-300 relative
+  z-10;
 }
 
 button:hover {
-  @apply shadow-lg translate-x-1 translate-y-1;
+  @apply -translate-x-1 -translate-y-1;
 }
+
 
 
 h1 {
